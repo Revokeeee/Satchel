@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
 	QGuiApplication app(argc, argv);
 	QQmlApplicationEngine qmlEngine;
 
-	qmlEngine.loadFromModule("Satchel.UI", "Main");
+	qmlEngine.loadFromModule("Satchel.UI", "Mains");
 
 	return app.exec();
 }
