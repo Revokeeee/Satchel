@@ -15,7 +15,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(Qt6 REQUIRED COMPONENTS Core Quick)
 qt_standard_project_setup(REQUIRES 6.5)
 
+add_subdirectory(SatchelApplication)
 add_subdirectory(SatchelCore)
 add_subdirectory(SatchelUI)
-add_subdirectory(Satchel)
 	
