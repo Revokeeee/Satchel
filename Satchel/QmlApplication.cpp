@@ -4,6 +4,8 @@
 #include <QQmlApplicationEngine>
 #include <QCoreApplication>
 
+#include "SatchelBase/Log.h"
+
 #include <memory>
 
 namespace Satchel
@@ -33,13 +35,14 @@ namespace Satchel
 		m_QmlEngine = std::make_unique<QQmlApplicationEngine>();
 
 		m_QmlEngine->loadFromModule("Satchel.UI", "Main");
+		ST_INFO("Satchel initialized successfully.");
 
-		return 0;
+		return 1;
 	}
 
 	int QmlApplication::Run()
 	{
 		m_Application->exec();
-		return 0;
+		return 1;
 	}
 }
