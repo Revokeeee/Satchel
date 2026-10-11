@@ -5,17 +5,24 @@
 
 namespace Satchel::Log
 {
-	struct Args
+
+	class LogEngine
 	{
-		std::string appName;
-		std::filesystem::path logFilePath;
-		std::uint16_t maxLogFileSize;
-		int maxFiles;
-		std::string fileRules;
+	public:
+		explicit LogEngine();
+		~LogEngine();
+		void Flush();
+
+		LogEngine(const LogEngine&) = delete;
+		LogEngine& operator=(const LogEngine&) = delete;
+		LogEngine(LogEngine&&) = delete;
+		LogEngine& operator=(LogEngine&&) = delete;
+
+	private:
+		void Init();
+		void Shutdown();
+
+	private:
+		std::unique_ptr<struct LogEngineImpl> m_impl;
 	};
-
-	void Init(const Args& args);
-	void Flush();
-
-	void Shutdown();
 }

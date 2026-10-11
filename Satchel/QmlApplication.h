@@ -13,8 +13,8 @@ namespace Satchel
 		QmlApplication(int argc, char* argv[]);
 		virtual ~QmlApplication() override;
 
-		int Init() override;
-		int Run() override;
+		[[nodiscard]] int Init() override;
+		[[nodiscard]] int Run() override;
 	private:
 		std::unique_ptr<QGuiApplication> m_Application;
 		std::unique_ptr<QQmlApplicationEngine> m_QmlEngine;
